@@ -4,7 +4,6 @@ const Keyv    = require('keyv');
 const fs      = require('fs');
 const client  = new Discord.Client();
 const db      = new Keyv('sqlite://db.sqlite');
-//const db2     = new Keyv('sqlite://db2.sqlite');
 const prefix  = ".";
 
 // Databases
@@ -15,7 +14,6 @@ var noshot = 0;
 // Init
 client.on('ready', async() => {
     // Quotes
-    //db.set("quotes", await db2.get("quotes"))
     quotes = await db.get("quotes");
     if (!(quotes))
     {
